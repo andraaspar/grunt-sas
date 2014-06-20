@@ -74,7 +74,9 @@ Copying all bower dependencies from 'bower_components/*/src' to 'lib'.
 
 ```js
 grunt.initConfig({
-  sas: {}
+  sas: {
+    foo: {}
+  }
 });
 ```
 
@@ -84,12 +86,14 @@ Copying all bower dependencies from 'external/*/source' to 'library', and not cl
 ```js
 grunt.initConfig({
   sas: {
-    options: {
-      depFolderPattern: 'external/*',
-      srcName: 'source',
-      libName: 'library',
-      cleanEntireLib: false,
-      cleanFilesToCopy: false
+    foo: {
+      options: {
+        depFolderPattern: 'external/*',
+        srcName: 'source',
+        libName: 'library',
+        cleanEntireLib: false,
+        cleanFilesToCopy: false
+      }
     }
   }
 });
