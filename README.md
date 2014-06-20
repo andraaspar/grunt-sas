@@ -1,6 +1,6 @@
 # grunt-sas
 
-> Gathers TypeScript dependencies to the lib folder.
+> Gathers bower dependencies' src contents to the lib folder.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -37,53 +37,60 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.depFolderPattern
 Type: `String`
-Default value: `',  '`
+Default value: `'bower_components/*'`
 
-A string value that is used to do something with whatever.
+Pattern for matching dependency folders.
 
-#### options.punctuation
+#### options.srcName
 Type: `String`
-Default value: `'.'`
+Default value: `'src'`
 
-A string value that is used to do something else with whatever else.
+The name of the src folder inside the dependency folder.
+
+#### options.libName
+Type: `String`
+Default value: `'lib'`
+
+The name of the lib folder to copy dependencies to.
+
+#### options.cleanEntireLib
+Type: `Boolean`
+Default value: `true`
+
+Whether to clean the entire contents of the lib folder before copying.
+
+#### options.cleanFilesToCopy
+Type: `Boolean`
+Default value: `true`
+
+Whether to clean the files / folders in lib matching the name of those that will be copied there.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+#### Simple usage
+Copying all bower dependencies from 'bower_components/*/src' to 'lib'.
 
 ```js
 grunt.initConfig({
-  sas: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+  sas: {}
 });
 ```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+#### Advanced usage
+Copying all bower dependencies from 'external/*/source' to 'library', and not cleaning anything.
 
 ```js
 grunt.initConfig({
   sas: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
+      depFolderPattern: 'external/*',
+      srcName: 'source',
+      libName: 'library',
+      cleanEntireLib: false,
+      cleanFilesToCopy: false
+    }
+  }
 });
 ```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
