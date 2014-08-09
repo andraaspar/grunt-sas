@@ -48,12 +48,16 @@ module.exports = function(grunt) {
 			cleanFiles = [options.libName + '/*'];
 		}
 		
-		grunt.config.set('clean', {
-			sas: cleanFiles
+		grunt.config.merge({
+			clean: {
+				sas: cleanFiles
+			}
 		});
-		grunt.config.set('copy', {
-			sas: {
-				files: copyFiles
+		grunt.config.merge({
+			copy: {
+				sas: {
+					files: copyFiles
+				}
 			}
 		});
 		
