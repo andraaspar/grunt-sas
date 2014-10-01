@@ -1,7 +1,7 @@
 {
 	"name": "grunt-sas",
 	"description": "Gathers bower dependencies' src contents to the lib folder.",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"homepage": "https://github.com/andraaspar/grunt-sas",
 	"author": {
 		"name": "András Parditka"

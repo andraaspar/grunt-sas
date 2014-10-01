@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
 		// Before generating any new files, remove any previously-created files.
 		clean: {
-			tests: ['lib', 'lib2']
+			tests: ['lib', 'lib2', 'tmp']
 		},
 
 		// Configuration to be run (and then tested).

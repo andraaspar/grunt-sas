@@ -28,15 +28,19 @@ exports.sas = {
 		done();
 	},
 	default_options: function(test) {
-		test.expect(2);
+		test.expect(3);
 
 		var actual1 = grunt.file.read('lib/dep1.txt');
 		var expected1 = grunt.file.read('bower_components/dep1/src/dep1.txt');
 		test.equal(actual1, expected1, 'Test 1');
-
+		
 		var actual2 = grunt.file.read('lib/dep2/dep2.txt');
 		var expected2 = grunt.file.read('bower_components/dep2/src/dep2/dep2.txt');
 		test.equal(actual2, expected2, 'Test 2');
+
+		var actual3 = grunt.file.read('lib/versions.txt');
+		var expected3 = grunt.file.read('test/expected1/versions.txt');
+		test.equal(actual3, expected3, 'Test 3');
 
 		test.done();
 	},
@@ -50,7 +54,7 @@ exports.sas = {
 		test.done();
 	},
 	custom_options_2: function(test) {
-		test.expect(3);
+		test.expect(4);
 
 		var actual1 = grunt.file.read('lib2/conflict.txt');
 		var expected1 = grunt.file.read('bower_components_2/dep2/source/conflict.txt');
@@ -63,6 +67,10 @@ exports.sas = {
 		var actual3 = grunt.file.read('lib2/another-conflict.txt');
 		var expected3 = grunt.file.read('bower_components_3/dep1/src/another-conflict.txt');
 		test.equal(actual3, expected3, 'Test 3');
+
+		var actual4 = grunt.file.read('lib2/versions.txt');
+		var expected4 = grunt.file.read('test/expected2/versions.txt');
+		test.equal(actual4, expected4, 'Test 4');
 
 		test.done();
 	}

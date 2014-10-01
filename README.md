@@ -43,6 +43,12 @@ Default value: `'bower_components/*'`
 
 Pattern for matching dependency folders.
 
+#### options.versionsFileName
+Type: `String`
+Default value: `'versions.txt'`
+
+The name of the versions information file to be written to the lib folder.
+
 #### options.srcName
 Type: `String`
 Default value: `'src'`
@@ -54,6 +60,12 @@ Type: `String`
 Default value: `'lib'`
 
 The name of the lib folder to copy dependencies to.
+
+#### options.tmpName
+Type: `String`
+Default value: `'tmp'`
+
+The name of the temporary folder where the version info will be initially written.
 
 #### options.cleanEntireLib
 Type: `Boolean`
